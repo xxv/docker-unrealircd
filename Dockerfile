@@ -15,6 +15,7 @@ RUN apt-get update \
 
 COPY ircd_ssl.py /home/ircd/ircd_ssl.py
 COPY deploy-unrealirc.sh /home/ircd/deploy-unrealirc.sh
+RUN chmod 755 /home/ircd/deploy-unrealirc.sh
 
 USER ircd
 WORKDIR /home/ircd
@@ -24,5 +25,6 @@ RUN /home/ircd/deploy-unrealirc.sh
 USER root
 COPY supervisor_services.conf /etc/supervisor/conf.d/services.conf
 COPY unrealircd-entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]
