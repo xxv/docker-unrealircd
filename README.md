@@ -3,7 +3,7 @@
   docker run dockerimages/docker-unrealircd
   
 =======
-UnrealIRCD with Anope Services
+UnrealIRCD
 ======
 
 Container

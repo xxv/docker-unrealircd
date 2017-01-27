@@ -1,6 +1,5 @@
 FROM debian:jessie
 ENV UNREAL_VERSION="4.0.3" \
-    ANOPE_VERSION="2.0.3" \
     TERM="vt100" \
     LC_ALL=C
 RUN apt-get update \
@@ -16,14 +15,11 @@ RUN apt-get update \
 
 COPY ircd_ssl.py /home/ircd/ircd_ssl.py
 COPY deploy-unrealirc.sh /home/ircd/deploy-unrealirc.sh
-COPY deploy-anope.sh /home/ircd/deploy-anope.sh
-COPY anope-make.expect /home/ircd/anope-make.expect
 
 USER ircd
 WORKDIR /home/ircd
 ENV HOME /home/ircd
 RUN /home/ircd/deploy-unrealirc.sh
-RUN /home/ircd/deploy-anope.sh
 
 USER root
 COPY supervisor_services.conf /etc/supervisor/conf.d/services.conf
