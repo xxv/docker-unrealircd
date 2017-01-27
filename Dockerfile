@@ -1,5 +1,5 @@
 FROM debian:jessie
-ENV UNREAL_VERSION="4.0.3" \
+ENV UNREAL_VERSION="4.0.10" \
     TERM="vt100" \
     LC_ALL=C
 RUN apt-get update \
