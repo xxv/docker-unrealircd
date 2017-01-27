@@ -13,7 +13,6 @@ RUN apt-get update \
  && sed -i "/^dc_eximconfig_configtype=/ s/'local'/'internet'/" /etc/exim4/update-exim4.conf.conf \
  && sed -i '/\[supervisord\]/a nodaemon=true' /etc/supervisor/supervisord.conf
 
-COPY ircd_ssl.py /home/ircd/ircd_ssl.py
 COPY deploy-unrealirc.sh /home/ircd/deploy-unrealirc.sh
 RUN chmod 755 /home/ircd/deploy-unrealirc.sh
 
