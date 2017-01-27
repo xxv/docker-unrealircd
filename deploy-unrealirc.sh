@@ -13,3 +13,4 @@ cd unrealircd-$UNREAL_VERSION
 ./Config
 make
 make install
+cp doc/conf/ssl/curl-ca-bundle.crt /home/ircd/unrealircd/conf/ssl/
