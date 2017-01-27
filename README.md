@@ -2,9 +2,13 @@
 
   docker run xxv/docker-unrealircd
   
-=======
-UnrealIRCD (no services)
-======
+UnrealIRCD
+==========
+
+Differences from the upstream:
+
+* Removes Anope (services)
+* Allows non-SSL connections
 
 Container
 ------
