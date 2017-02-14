@@ -22,6 +22,13 @@ ENV HOME /home/ircd
 RUN /home/ircd/deploy-unrealirc.sh
 
 USER root
+COPY post-install.sh /home/ircd/post-install.sh
+RUN chmod 755 /home/ircd/post-install.sh
+
+USER ircd
+RUN /home/ircd/post-install.sh
+
+USER root
 COPY supervisor_services.conf /etc/supervisor/conf.d/services.conf
 COPY unrealircd-entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh

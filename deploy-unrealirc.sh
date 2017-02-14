@@ -1,9 +1,4 @@
 #!/bin/bash
-#source /home/unreal/config
-
-## Install UnrealIRCD
-#echo $MOTD > ircd.motd
-#echo $RULES > ircd.rules
 
 wget https://www.unrealircd.org/unrealircd${UNREAL_VERSION%%.*}/unrealircd-$UNREAL_VERSION.tar.gz{,.asc}
 gpg --keyserver keys.gnupg.net --recv-keys 0xA7A21B0A108FF4A9
@@ -13,4 +8,3 @@ cd unrealircd-$UNREAL_VERSION
 ./Config
 make
 make install
-cp doc/conf/ssl/curl-ca-bundle.crt /home/ircd/unrealircd/conf/ssl/
